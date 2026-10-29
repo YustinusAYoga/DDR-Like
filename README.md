@@ -18,10 +18,13 @@ This is an early prototype. It does not include VRM avatars, clothing meshes, au
 Requirements: Node.js **22.12 or newer**, npm, and `curl` for the initial model download.
 
 ```sh
-npm ci
-npm run assets
-npm run dev
+./setup.sh
+./run.sh
 ```
+
+Run setup once (and after dependency changes); it installs locked dependencies and downloads the local pose assets. Run `./run.sh` for subsequent sessions; press Ctrl+C to stop. Both scripts work from any working directory on macOS/Linux with Bash. If model download fails, allow `storage.googleapis.com` and rerun setup; the run script still permits camera-free practice.
+
+Alternatively, use `npm run setup` and `npm start` directly, including on Windows with Node.js, npm, and curl installed. To choose a port, use `./run.sh --port 3000` or `npm start -- --port 3000`.
 
 Open the local address printed by Vite. Webcam access requires a secure context: localhost during development or HTTPS when hosted. Camera permission is requested only after clicking **Enable camera**.
 
