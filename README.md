@@ -24,7 +24,16 @@ Requirements: Node.js **22.12 or newer**, npm, and `curl` for the initial model 
 
 Run setup once (and after dependency changes); it installs locked dependencies and downloads the local pose assets. Run `./run.sh` for subsequent sessions; press Ctrl+C to stop. Both scripts work from any working directory on macOS/Linux with Bash. If model download fails, allow `storage.googleapis.com` and rerun setup; the run script still permits camera-free practice.
 
-Alternatively, use `npm run setup` and `npm start` directly, including on Windows with Node.js, npm, and curl installed. To choose a port, use `./run.sh --port 3000` or `npm start -- --port 3000`.
+On Windows, run these commands in PowerShell or Command Prompt:
+
+```powershell
+.\setup.bat
+.\run.bat
+```
+
+The Windows scripts work from any working directory and require Node.js **22.12 or newer**, npm, and `curl.exe` on PATH (curl is included in current Windows versions). Run setup once and after dependency changes; press Ctrl+C to stop the server. To choose a port, use `.\run.bat --port 3000`.
+
+Alternatively, use `npm run setup` and `npm start` directly on any platform. To choose a port on macOS/Linux, use `./run.sh --port 3000`, or use `npm start -- --port 3000` on any platform.
 
 Open the local address printed by Vite. Webcam access requires a secure context: localhost during development or HTTPS when hosted. Camera permission is requested only after clicking **Enable camera**.
 
